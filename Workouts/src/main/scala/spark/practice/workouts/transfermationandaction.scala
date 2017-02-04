@@ -38,6 +38,27 @@ object transfermationandaction {
     //groupByKey Function
     val groupByKey = pairRDD.groupByKey()
     groupByKey.saveAsTextFile("map.groupByKey.txt")
+    
+    //mapValue Function
+    val mapValue=pairRDD.mapValues(x=>x+1)
+    mapValue.saveAsTextFile("map.mapValue.txt")
+    
+    //flatMapValue Function
+    val flatMapValue=pairRDD.flatMapValues(x=>(2 to 5))
+    flatMapValue.saveAsTextFile("map.flatMapValue.txt")
+    
+    //keys Function
+    val keys=pairRDD.keys
+    keys.saveAsTextFile("map.keys.txt")
+    
+    //values Function
+    val values=pairRDD.values
+    values.saveAsTextFile("map.values.txt")
+    
+    //sortByKey Function
+    val sortByValue=pairRDD.sortByKey()
+    sortByValue.saveAsTextFile("map.soryByvalues.txt")
+    
 
   }
 }
